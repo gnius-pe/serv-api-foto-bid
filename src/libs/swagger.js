@@ -4,7 +4,7 @@ import swaggerUI from 'swagger-ui-express';
 const options = {
     definition : {
         openapi:"3.0.0",
-        info : { title: 'API DAR', version:"1.0.0"}
+        info : { title: 'API SERV FOTO BID', version:"1.0.0"}
     },
     apis: ['src/routes/*.js','../models/user.model.js'],
 };
