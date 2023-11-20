@@ -6,6 +6,7 @@ import patientRouter from "./routes/patient.routes.js";
 import fotoInformationRoutes from "./routes/fotoInformation.routes.js";
 import {swagggerJSDocs} from "../src/libs/swagger.js";
 import cors from "cors";
+import {PORT} from "./config.js"
 
 
 const app = express();
@@ -20,7 +21,7 @@ app.use(cookieParser());
 app.use('/api',authRoutes);
 app.use('/api',patientRouter);
 app.use('/api',fotoInformationRoutes);
-swagggerJSDocs(app,3000);
+swagggerJSDocs(app,PORT);
 
 
 

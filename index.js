@@ -1,10 +1,9 @@
 import app from "./src/app.js"
 import {connectDB} from "./src/db.js"
-import  'dotenv/config';
+import {PORT} from "./src/config.js"
 
-const puerto = process.env.PORT;
 
 connectDB();
-app.listen(puerto);
+app.listen(PORT);
 
-console.log('server on port',puerto)
+console.log('server on port',PORT)
