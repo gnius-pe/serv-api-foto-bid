@@ -12,7 +12,7 @@ import {PORT} from "./config.js"
 const app = express();
 
 app.use(cors({
-    origin:['http://localhost:5173','https://fotobid.netlify.app/'],
+    origin:['http://localhost:5173','https://fotobid.netlify.app'],
     credentials:true
 }));
 app.use(morgan('dev'));
