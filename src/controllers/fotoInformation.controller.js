@@ -5,6 +5,7 @@ import fs from "fs-extra";
 
 export const createFotoInformation = async (req,res) => {
     try {
+        console.log(req.user)
         if(!req.files?.image) return res.status(400).json({
             message: "No hay imagen"
         })
@@ -15,6 +16,7 @@ export const createFotoInformation = async (req,res) => {
             public_id: resultado.public_id,
             secure_url: resultado.secure_url
         }
+        newFotoPost.user = req.user.id;   
         await fs.unlink(tempFile);
         const saveFotoInformation = await newFotoPost.save();
         res.json(saveFotoInformation);

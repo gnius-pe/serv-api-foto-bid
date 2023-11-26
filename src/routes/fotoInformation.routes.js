@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { createFotoInformation, getFotoInformation, deleteFotoInformation, getFotosInformations } from "../controllers/fotoInformation.controller.js";
 import fileUpload from 'express-fileupload';
+import { authRequired } from "../middlewares/validateToken.js";
+
 const router = Router();
 
 /**
@@ -14,7 +16,7 @@ const router = Router();
  *          200:
  *              description: listado de pacientes
  */
-router.post('/foto',fileUpload({
+router.post('/foto',authRequired,fileUpload({
     useTempFiles : true,
     tempFileDir : './uploads'
 }),createFotoInformation);

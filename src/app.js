@@ -11,6 +11,7 @@ import {PORT} from "./config.js"
 
 const app = express();
 
+app.options('*', cors());
 app.use(cors({
     origin:['http://localhost:5173','https://fotobid.netlify.app'],
     credentials:true
