@@ -5,7 +5,6 @@ import fs from "fs-extra";
 
 export const createFotoInformation = async (req,res) => {
     try {
-        console.log(req.user)
         if(!req.files?.image) return res.status(400).json({
             message: "No hay imagen"
         })

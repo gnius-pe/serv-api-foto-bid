@@ -27,8 +27,8 @@ const router = Router();
  *              -password
  *              -username
  *          example:
- *              email: igor.ramos@der.com
- *              password: capibara123
+ *              email: igor.ramos@unas.edu.pe
+ *              password: 123456
  *              username: capigor
  */
 
@@ -49,8 +49,8 @@ const router = Router();
  *              -email
  *              -password
  *          example:
- *              email: igor.ramos@der.com
- *              password: capibara123
+ *              email: igor.ramos@unas.edu.pe
+ *              password: "123456"
  */
 
 /**
