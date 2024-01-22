@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import authRoutes from "./routes/auth.routes.js";
 import patientRouter from "./routes/patient.routes.js";
 import fotoInformationRoutes from "./routes/fotoInformation.routes.js";
+import fotoPostRoutes from "./routes/fotoPost.routes.js"
 import {swagggerJSDocs} from "../src/libs/swagger.js";
 import cors from "cors";
 import {PORT} from "./config.js"
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use('/api',authRoutes);
 app.use('/api',patientRouter);
 app.use('/api',fotoInformationRoutes);
+app.use('/api',fotoPostRoutes);
 swagggerJSDocs(app,PORT);
 
 
