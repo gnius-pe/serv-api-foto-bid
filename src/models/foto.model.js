@@ -1,5 +1,7 @@
 import mongoose, { mongo } from "mongoose";
 
+import mongoosePaginate from "mongoose-paginate-v2"
+
 const FotoInformationSchema = new mongoose.Schema({
     image:{
         public_id : String,
@@ -20,4 +22,5 @@ const FotoInformationSchema = new mongoose.Schema({
     timestamps:true
 });
 
+FotoInformationSchema.plugin(mongoosePaginate);
 export default mongoose.model("FotoInformation", FotoInformationSchema);

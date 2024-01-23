@@ -74,7 +74,7 @@ router.post('/foto',authRequired,fileUpload({
  *       - Foto
  *      responses:
  *          200:
- *              description: listado de pacientes
+ *              description: uns listado de tus fotos
  */
 router.get('/fotos',getFotosInformations);
 router.get('/foto/:id',getFotoInformation);
