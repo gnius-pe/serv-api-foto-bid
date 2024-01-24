@@ -3,7 +3,7 @@ import {getFotoPosts} from "../controllers/fotoPosts.controller.js";
 
 const router = Router();
 
-// http://localhost:3000/api/foto-posts?page=1&limit=10
+// ejemplo http://localhost:3000/api/foto-posts?page=1&limit=10
 /**
  * @swagger
  * /api/foto-posts:
@@ -11,9 +11,20 @@ const router = Router();
  *      summary: obtienes todas las fotos
  *      tags:
  *       - Posts
+ *      parameters:
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *         description: numero de pagina
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *         description: cantidad de elementos a obtener
  *      responses:
  *          200:
- *              description: listado de todas las fotos de los usuarios
+ *              description: paginacion de los todos los elementos subidos por los usuarios
  */
 router.get('/foto-posts',getFotoPosts);
 
