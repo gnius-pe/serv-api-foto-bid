@@ -7,11 +7,55 @@ const router = Router();
 
 /**
  * @swagger
+ * components:
+ *  schemas:
+ *      Fotografia:
+ *          type: object
+ *          properties:
+ *              image:
+ *                  type: object
+ *                  properties:
+ *                      public_id:
+ *                          type: string
+ *                          description: id publica de la imagen
+ *                      secure_url:
+ *                          type: string
+ *                          description: url de la fotografia
+ *              description:
+ *                  type: string
+ *                  description: descripcion de la fotografia
+ *              like:
+ *                  type: number
+ *                  description: cantidad de me gusta de la fotografia
+ *              user:
+ *                  type: string
+ *                  format: objectid
+ *                  description: Identificador único del usuario
+ *              
+ * 
+ */
+
+/**
+ * @swagger
  * /api/foto:
  *  post:
  *      summary: subir una imagen
  *      tags:
- *       - Foto
+ *          - Foto
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              multipart/form-data:
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          image:
+ *                              type: string
+ *                              format: binary
+ *                              description: Archivo de imagen (foto)
+ *                          description:
+ *                              type: string
+ *                              description: Descripcion de la foto
  *      responses:
  *          200:
  *              description: listado de pacientes
@@ -30,7 +74,7 @@ router.post('/foto',authRequired,fileUpload({
  *       - Foto
  *      responses:
  *          200:
- *              description: listado de pacientes
+ *              description: uns listado de tus fotos
  */
 router.get('/fotos',getFotosInformations);
 router.get('/foto/:id',getFotoInformation);
